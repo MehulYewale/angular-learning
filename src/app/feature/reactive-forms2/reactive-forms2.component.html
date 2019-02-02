@@ -1,0 +1,52 @@
+<p>
+  reactive-forms2 works!
+</p>
+
+<form [formGroup]="myFG">
+	<div>
+		Country : 
+		<select type="text" formControlName="country" (change)="onCountryChange()">
+		 <option value=""> Please Select </option>
+		 <option *ngFor="let country of countries" [value]="country.name"> {{ country.name }}</option>
+		</select>
+	</div>
+	<br><br>
+	
+	<div *ngIf="cities.length > 0">
+		City : 
+		<select type="text" formControlName="city">
+		 <option value=""></option>
+		 <option *ngFor="let city of cities" [value]="city"> {{ city }} </option>
+		</select>
+	</div>
+	<br><br>
+	
+	<div>
+		PinCode : <input type="text" formControlName="pincode">
+	</div>
+	<br><br>
+	
+	<div>
+	    <mobile-number formControlName="phoneNumber" label='Phone Number'></mobile-number>
+	</div>
+	<br><br>
+	
+	<div>
+	   Do you have : <br>
+		 <input type="checkbox" formControlName="car" /> Car  
+		 <input type="checkbox" formControlName="bike" /> Bike  
+	</div>
+	
+	<div>
+	   Marriage Status : <br>
+		 <input type="radio" formControlName="gender" value="Male"/> Male  
+		 <input type="radio" formControlName="gender" value="Female"/> Female  
+	</div>
+	
+	
+</form>
+
+<hr> 
+<p> {{ myFG.value | json }} </p>
+<p> {{ myFG.status | json }} </p>
+<p> {{ pinCodeChangeList | json }} </p>

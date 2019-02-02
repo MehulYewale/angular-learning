@@ -1,0 +1,14 @@
+<p>
+  directive works!
+</p>
+
+<div [cssDisplay]="true" (onDblClick)="changeInText($event)"> Click on this elements </div>
+<!-- $event keyword needs to put here to send data back to componnent -->
+<br>
+<br>
+
+<div cssDisplay [display2]="myone"> Click here --- without [] bracket directive</div>
+
+<br>
+<br>
+<div [cssDisplay]="false"> Click on this elements to hide </div>

@@ -1,0 +1,29 @@
+
+/* below css is not working for component level css but if you put in style.css it will work*/
+mobile-number .myClass {
+	font-style: italic;
+	font-weight: bold;
+}
+/* below css is not working for component level css but if you put in style.css it will work -- even myParentClass is outside of component */
+.myParentClass .myClass {
+	font-style: italic;
+	font-weight: bold;
+}
+
+
+/* this css will get priority & get override on style css */
+.myClass {
+	font-style: italic;
+	font-weight: bold;
+}
+
+/*---- OR use host to get host element selected here(mobile-number)  ----*/
+:host .myClass {
+	font-style: italic;
+	font-weight: bold;
+}
+
+
+
+
+

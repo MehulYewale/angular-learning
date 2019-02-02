@@ -1,0 +1,58 @@
+<button (click)="getTitle()"> Change Title </button>
+
+<br/>
+<div>Title here : {{ title }} </div>
+<hr>
+<br/><br/>
+<form [formGroup]="myForm">
+    <div>
+      *Name :   <input type="text" formControlName="name"> <!-- [disabled]="true" -->
+    </div>
+    <br/>
+    <div *ngIf="!ageTrack">
+    	<input type="checkbox" (click)="trackAge(ageTrack)"/> Age Track 
+    </div>	
+    <div *ngIf="ageTrack">
+       *Age (>17):  <input type="text" formControlName="age"/>
+    </div>
+    <br/>
+    <br/>
+    <div formGroupName="privateGroup">
+        Adhar Card NO : <input type="text" formControlName="adharCardNo">
+    </div>
+     <br/>
+     <br/>
+     <div class="myParentClass">
+     <mobile-number formControlName="mobileNumber"></mobile-number> 
+	</div>
+     	<input type="checkbox" (change)="disableForm($event.target.checked)"/> Disable Form
+     	<input type="checkbox" (change)="clearNameValidators($event.target.checked)"/> Clear validator on name field
+     <br><br>
+   
+    <input type="submit" (click)="onSubmit()" [disabled]="myForm.invalid"/>
+    <input type="reset">
+    <br><br>
+    {{ "Form  Valid : " + myForm.valid}} <br>
+    Form  values :  {{ myForm.value | json }} 
+    
+</form>
+
+<hr>
+
+<button (click)="getPersonDetails()"> Show Person Data </button> <br/> <br/>
+<table class="table-border">
+    <thead>
+        <th> Name </th>
+        <th> Age </th>
+        <th> Adhar no </th> 
+        <th> Action </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of personData">
+           <td> {{ p.name }} </td>
+           <td> {{ p.age }} </td>
+           <td> {{ p.adharCardNo }} </td>
+           <td> <a [routerLink]="'/my-app/person/' + p.id "> Edit </a> </td>
+        </tr>
+    </tbody>
+</table>

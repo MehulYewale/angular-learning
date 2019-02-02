@@ -1,0 +1,17 @@
+<div> Show Person Data </div> <br/> 
+<table class="table-border">
+    <thead>
+        <th> Name </th>
+        <th> Age </th>
+        <th> Adhar no </th>
+        <th> Mobile Number </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of personData | myPipe:filterBy:'age'">
+           <td> {{ p.name }} </td>
+           <td> {{ p.age }} </td>
+           <td> {{ p.adharCardNo }} </td>
+           <td> {{ p.mobileNumber }} </td>     
+        </tr>
+    </tbody>
+</table>

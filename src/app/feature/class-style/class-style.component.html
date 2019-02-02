@@ -1,0 +1,45 @@
+<p>
+  class-style works!
+</p>
+
+
+<br>
+<b>
+ngStyle only accept object type
+<br>
+ngClass accepts string, array, object, objExp
+</b>
+<br>
+
+<div [ngStyle]="{'color':'green', 'font-weight': 'bold'}"> This is in Green color</div>
+
+<br><br>
+<div [ngStyle]="[{'color':'yellow'}, {'font-weight': 'bold'}]"> This is in yellow color -- wrong style</div>
+
+<br><br>
+<div [ngStyle]="myStyle"> This is in yellow color ngStyle="myStyle"</div>
+
+<br><br>
+<div [style.color]="'red'"> This is in Red color  style.color="'red'"</div>
+
+<br><br>
+<div ngClass="temp">ngClass attributes</div>
+
+<br><br>
+<div ngClass="first second"> multiple ngClass attributes2</div>
+
+<br><br>
+{{"thirdClass =" + thirdClass}}
+<div [ngClass]="{'first': true, 'second': false, 'third': thirdClass}"> multiple ngClass attributes3</div>
+
+<br><br>
+<div [ngClass]="{'first second': true}"> multiple ngClass attributes4  object - 'first second': true </div>
+
+<br><br>
+<div [ngClass]="['first', 'second']"> multiple ngClass attributes5  array 'first', 'second'</div>
+<br><br>
+<div [class.color]="true"> This is in class.color=true</div>
+
+<br><br>
+{{"thirdClass =" + thirdClass}}
+<div [ngClass]="{'third': thirdClass? true : false}"> thirdClass conditional ?</div>

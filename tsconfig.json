@@ -1,0 +1,32 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  }
+}
+
+// to add other project depedencies to detect typescript linting
+//https://www.typescriptlang.org/docs/handbook/compiler-options.html
+//https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping
+/*
+"baseUrl": ".",
+"paths": {
+  "*": [
+    "*",
+    "generated/*"
+  ]
+}
+*/

@@ -1,0 +1,60 @@
+<p>
+  reactive-forms works!
+</p>
+
+
+<button type="button" (click)="getEmpData()">  Get Data </button> <br><br>
+<form [formGroup]="empFG">
+    <div>
+        Id : <input type="text" formControlName="id">
+    </div>
+    <br><br>
+    <div>
+        * Name : <input type="text" formControlName="name">
+        <span *ngIf="empFG.controls.name.invalid && empFG.controls.name.dirty"> Name is mandotory </span>
+    </div>
+    <br><br>
+    <div>
+        Age : <input type="text" formControlName="age">
+    </div>
+    <br><br>
+    <div>
+        Mobile Number : <input type="text" formControlName="mNumber">
+    </div>
+    <br><br>
+    <div formGroupName="addressGroup">
+        <div>
+            Address : <input type="text" formControlName="address">
+        </div>
+        <br><br>
+        <div>
+            Pincode : <input type="text" formControlName="pincode">
+        </div>
+    </div>
+      <br> <br>
+    <div formArrayName="addressArray" *ngIf="addressArray != null">
+      
+        <div *ngFor="let add of addressArray.controls ; let i = index" [formGroupName]="i">
+        <div>
+            Address : <input type="text" formControlName="address">
+        </div>
+        <div>
+            Pincode : <input type="text" formControlName="pincode">
+        </div>
+        <br> <br>
+        </div>
+          
+    </div>
+   
+
+    <br><br>
+    <button type="submit" (click)="saveEmpData()">  Submit </button> &nbsp; 
+    <button type="button" (click)="addAddress()">  Add Address </button> &nbsp; 
+    <button type="button" (click)="removeAddresses()">  Remove Addresses </button> &nbsp; 
+    <button type="button" (click)="resetForm()">  Reset </button> 
+    
+    <br><br>
+</form>
+<hr> 
+<p> {{ empFG.value | json }} </p>
+<p> {{ empFG.status | json }} </p>

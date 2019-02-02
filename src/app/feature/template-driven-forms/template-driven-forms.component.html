@@ -1,0 +1,45 @@
+<p>
+  template-driven-forms works!
+</p>
+<!-- #myForm="ngForm" (root required) but adding it to make tamelate reference variable-->
+<form #myForm="ngForm">
+	<br>
+	<div>
+		Emp Id : <input [(ngModel)]="emp.empId" name="id"/>
+	</div>
+	
+	<br>
+	<div>
+		Emp Name : <input [(ngModel)]="emp.eName" name="ename" #myname accesskey="n" required #spy="ngModel"/> 
+		<span> {{ myname.className}} </span> 
+		<br>
+		{{ spy.pristine }}
+		<div [hidden]="spy.valid || spy.untouched"> name is required </div>
+<!--		<div *ngIf="spy.invalid && spy.touched"> name is required </div>-->
+	</div>
+	
+	<br>
+	<div>
+		Emp age : <input [(ngModel)]="emp.age" name="age"/>
+	</div>
+	
+	<br>
+	<div>
+		Emp Mobile-Number : <input [(ngModel)]="emp.mobileNumber" name="mobileNumber"/>
+	</div>
+	
+	<br>
+	<div>
+		Emp Address : <input [(ngModel)]="emp.address" name="address"/>
+	</div>
+	<br><br>
+	<input type="submit" [disabled]="!myForm.form.valid"> <br> <br>
+	<button type="button" class="btn btn-default" (click)="myForm.reset();"> Reset </button> &nbsp;
+	<button type="button" class="btn btn-default" (click)="getNemEmp(myForm);"> Revert </button>
+	
+</form>
+<br><br>
+<hr>
+{{ emp | json }}
+
+
