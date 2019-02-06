@@ -31,4 +31,5 @@ if we are getting md-datepicker error first time when doing npm start, then comm
 src/app/modules/material/material.module.ts and then you can reverse as it is.
 
 ## json server start
+Run `npm install json-server -g` to install json-server globally
 Run `json-server server-data.json` to get json server on that path for temp.json file
