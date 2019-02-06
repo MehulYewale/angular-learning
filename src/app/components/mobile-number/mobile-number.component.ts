@@ -19,7 +19,7 @@ export class MobileNumberComponent implements OnInit, ControlValueAccessor {
   @Output() childControl : FormControl = new FormControl();
   private subcription: Subscription;
 	
-  private mydata: string;
+  private mydata: string;  // can't be  accesssible in html template, only public instance variable can be accessed in template
   
   constructor(private rxService: RxjsService) { }
 
